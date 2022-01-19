@@ -1,4 +1,4 @@
-# WiFI
+# WiFi
 WiFi Resources
 
 MONITOR MODE WIFI ADAPTER:
