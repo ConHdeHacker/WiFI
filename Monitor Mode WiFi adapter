@@ -2,7 +2,8 @@
 
 #Switching the WI-FI network card to monitor mode
 
-echo -e "\e[1;32mACTIVATING MONITOR MODE IN\e[0m" $1
+echo " "
+echo "\e[1;32mACTIVATING MONITOR MODE IN\e[0m" $1
 echo " "
 
 airmon-ng check kill $1 >/dev/null
@@ -12,7 +13,7 @@ iw dev
 #Change the MAC of the WI-FI network card to a random MAC
 
 echo " "
-echo -e "\e[1;32mCHANGING MAC ADDRESS OF WI-FI NETWORK CARD\e[0m"
+echo "\e[1;32mCHANGING MAC ADDRESS OF WI-FI NETWORK CARD\e[0m"
 echo " "
 
 ifconfig $1 down
@@ -21,7 +22,7 @@ macchanger -a $1
 #ncreasing the TX power of the WI-FI network card
 
 echo " "
-echo -e "\e[1;32mHANGING TRANSMISSION POWER TO 30dBm\e[0m"
+echo "\e[1;32mHANGING TRANSMISSION POWER TO 30dBm\e[0m"
 echo " "
 
 iw reg set GY #the framework of legislation applied is changed
