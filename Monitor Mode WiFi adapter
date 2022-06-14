@@ -5,8 +5,7 @@
 echo -e "\e[1;32mACTIVATING MONITOR MODE IN\e[0m" $1
 echo " "
 
-systemctl restart network-manager
-airmon-ng dhclient wpa_supplicant >/dev/null
+airmon-ng check kill $1 >/dev/null
 airmon-ng start $1 >/dev/null
 iw dev
 
@@ -26,6 +25,6 @@ echo -e "\e[1;32mHANGING TRANSMISSION POWER TO 30dBm\e[0m"
 echo " "
 
 iw reg set GY #the framework of legislation applied is changed
-iwconfig $1 txpower 30 #the transmitting power is changed to 30 dBm
+iw $1 set txpower fixed 3000 #the transmitting power is changed to 30 dBm
 ifconfig $1 up
 iw dev
